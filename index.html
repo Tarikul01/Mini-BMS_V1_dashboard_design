@@ -99,32 +99,21 @@
             color: #4a4e69;
         }
 
-  
-        .overview_stats{
+        .overview_stats {
             display: flex;
-            
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
         }
 
         .Overview_stat-item {
-            background-color: #4ba749;
-            color:black;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            width: 23%;
-        } 
-        .Overview_stat-item {
             background-color: #f2f2f2; /* Default color */
             color: #000; /* Black text */
-            padding: 5px 0px; /* Top and bottom padding */
+            padding: 5px 0; /* Top and bottom padding */
             border-radius: 5px; /* Optional: rounded corners */
-        
             text-align: center;
-            margin: 5px 0px;
-            width:50%;
+            margin: 5px 0;
+            width: 50%;
         }
 
         .Overview_stat-item:nth-child(1) {
@@ -146,6 +135,7 @@
         .Overview_stat-item:nth-child(5) {
             background-color: #43aa8b; /* Teal */
         }
+
         /* Control Panel */
         .battery-control {
             background-color: #ffffff;
@@ -237,7 +227,7 @@
 
 <!-- Sidebar -->
 <div class="sidebar">
-    <div class="brand">Battery Management</div>
+    <div class="brand">BMS</div>
     <ul>
         <li>
             <a href="#">
@@ -289,7 +279,11 @@
     <!-- Battery Control Panel -->
     <div class="battery-control">
         <h2>Control Panel</h2>
-
+        <div class="control-panel">
+            <button>Start Charge</button>
+            <button>Stop Charge</button>
+            <button>Check Status</button>
+        </div>
     </div>
 </div>
 
@@ -307,6 +301,35 @@
     document.querySelector('.toggle-menu').addEventListener('click', () => {
         document.querySelector('.sidebar').classList.toggle('active');
     });
+
+    // WebSocket Setup
+    const socket = new WebSocket('ws://');
+
+    // socket.addEventListener('open', () => {
+    //     console.log('Connected to WebSocket');
+    // });
+
+    // socket.addEventListener('message', (event) => {
+    //     console.log('Message from server', event.data);
+    //     // Process the incoming data and update the dashboard
+    // });
+
+    // socket.addEventListener('close', () => {
+    //     console.log('WebSocket disconnected');
+    // });
+
+    // socket.addEventListener('error', (error) => {
+    //     console.error('WebSocket error:', error);
+    // });
+
+    // // Example of sending a message to the WebSocket server
+    // function sendMessage(message) {
+    //     if (socket.readyState === WebSocket.OPEN) {
+    //         socket.send(message);
+    //     } else {
+    //         console.error('WebSocket is not open');
+    //     }
+    // }
 </script>
 
 </body>
